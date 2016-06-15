@@ -7,35 +7,27 @@ body {
 
 h1 {
 	color: white;
+	text-align: center;
 	}	
 	
 p {
 	font-family: "Times New Roman";
+	text-align: center;
 	}
-	
+		
+
 img {
     max-width: 100%;
-    height: auto;
+	
+	
 }
 
-/*form {
-                width:500px;
-                margin:50px auto;
+input[type="text"] {
+	height: 20px;
+	width: 900px;
 }
-.search {
-                padding:8px 15px;
-                background:rgba(50, 50, 50, 0.2);
-                border:0px solid #dbdbdb;
+
+input[type="submit"] {
+	height: 25px;
+	width: 95px;
 }
-.button {
-                position:relative;
-                padding:6px 15px;
-                left:-8px;
-                border:2px solid #207cca;
-                background-color:#207cca;
-                color:#fafafa;
-}
-.button:hover  {
-                background-color:#fafafa;
-                color:#207cca;
-}*/
