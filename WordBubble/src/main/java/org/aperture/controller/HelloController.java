@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HelloController {
 
-    @RequestMapping("/view/words")
+    @RequestMapping("/words")
     public String index(Model model) {
     	WordBubbleDAO dao = new WordBubbleDAO();
     	String value = "";
