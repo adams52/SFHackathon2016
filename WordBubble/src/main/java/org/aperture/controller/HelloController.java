@@ -24,5 +24,21 @@ public class HelloController {
     	
         return "forward:/index.jsp";
     }
+	
+	@RequestMapping("/wordsByPerson")
+	public String wordsByPerson(Model model, String name) {
+    	WordBubbleDAO dao = new WordBubbleDAO();
+    	String value = "";
+    	try {
+			value = dao.selectWordCountByPerson(name);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	model.addAttribute("test",value);
+    	
+        return "forward:/index.jsp";
+    }
 
 }
