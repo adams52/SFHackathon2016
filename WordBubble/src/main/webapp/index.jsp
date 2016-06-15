@@ -13,7 +13,7 @@
 		var array = str.split(';');
 		
 		var i;
-		var word_array_obj;// = {text: textWeightArr[0], weight: textWeightArr[1]}
+		var word_array_obj;
 		var word_array = [];
 		
 		for (i = 0; i < array.length; i++) {
@@ -24,12 +24,11 @@
 		
 		$(function() {
 		  // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
-		  $("#example").jQCloud(word_array);
+		  $("#example").jQCloud(word_array, {
+			  element_rendered: function(element) {
+				    $(element).fadeIn();
+				  }});
 		});
-		
-		function goTo(){
-		    location.href = document.getElementById('link_id').value;
-		}
 		
 		function refreshPage(){
 		    window.location.reload();
