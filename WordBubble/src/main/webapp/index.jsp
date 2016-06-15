@@ -8,7 +8,7 @@
     <script type="text/javascript" src="jqcloud.js"></script>
     <script type="text/javascript">
     
-		var str = '${test }'
+		var str = '${test }' //new
 		
 		var array = str.split(';');
 		
