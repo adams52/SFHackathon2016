@@ -27,7 +27,9 @@
 		  $("#example").jQCloud(word_array, {
 			  element_rendered: function(element) {
 				    $(element).fadeIn();
-				  }});
+				  },
+				  delay: 100}
+				  );
 		});
 		
 		function refreshPage(){
