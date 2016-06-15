@@ -54,7 +54,7 @@ public class WordBubbleDAO {
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30); // set timeout to 30 sec.
 
-			ResultSet rs2 = statement.executeQuery("SELECT Word, Sum(Count) AS Count FROM BusinessSocial WHERE Name = '" + person + "' GROUP BY Word");
+			ResultSet rs2 = statement.executeQuery("SELECT Word, Sum(Count) AS Count FROM BusinessSocial WHERE Name = '" + person + "' GROUP BY Word ORDER BY Count DESC");
 			
 			while (rs2.next()) {
 				value += "" + rs2.getString("Word") + ":";

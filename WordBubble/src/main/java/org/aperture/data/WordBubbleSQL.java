@@ -6,16 +6,16 @@ public class WordBubbleSQL {
 			"CREATE TABLE BusinessSocial (Name string, Community string, Word string, Count integer)";
 	
 	public static final String INSERT_DATA = "INSERT INTO BusinessSocial (Name, Community, Word, Count) " +
-			"VALUES ('Ben Adams', 'Red Mic', 'Red', 2)" +
-			", ('Ben Adams', 'Red Mic', 'Red', 3)" +
-			", ('Ben Adams', 'Red Mic', 'Mic', 5)" +
-			", ('Ben Adams', 'Systems Technology', 'Autonomous', 3)" +
-			", ('Ben Adams', 'Systems Technology', 'Vehicles', 4)" +
-			", ('Ben Adams', 'Systems Technology', 'Bridge', 2)" +
-			", ('Ben Adams', 'Ask Oak', 'Star', 3)" +
-			", ('Ben Adams', 'Ask Oak', 'IT', 5)" +
-			", ('Ben Adams', 'Ask Oak', 'Modernization', 4)" +
-			", ('Ben Adams', 'Ask Oak', 'Remarkable', 5)" +
+			"VALUES ('Ben Adams', 'Red Mic', 'Test', 1)" +
+			", ('Ben Adams', 'Red Mic', 'Night', 2)" +
+			", ('Ben Adams', 'Red Mic', 'Mic', 3)" +
+			", ('Ben Adams', 'Systems Technology', 'Autonomous', 4)" +
+			", ('Ben Adams', 'Systems Technology', 'Vehicles', 5)" +
+			", ('Ben Adams', 'Systems Technology', 'Bridge', 6)" +
+			", ('Ben Adams', 'Ask Oak', 'Star', 7)" +
+			", ('Ben Adams', 'Ask Oak', 'IT', 8)" +
+			", ('Ben Adams', 'Ask Oak', 'Modernization', 9)" +
+			", ('Ben Adams', 'Ask Oak', 'Remarkable', 10)" +
 			", ('Nive Suresh', 'Red Mic', 'IT', 7)" +
 			", ('Nive Suresh', 'Red Mic', 'Modernization', 3)" +
 			", ('Nive Suresh', 'Red Mic', 'Remarkable', 1)" +
