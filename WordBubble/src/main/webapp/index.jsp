@@ -11,7 +11,6 @@
 		var str = '${test }'
 		
 		var array = str.split(';');
-		alert(array);
 		
 		var i;
 		var word_array_obj;// = {text: textWeightArr[0], weight: textWeightArr[1]}
@@ -20,25 +19,8 @@
 		for (i = 0; i < array.length; i++) {
 		  var textAndWeight = array[i];
 		  var textWeightArr = textAndWeight.split(':');
-		  alert(textWeightArr[0]);
-		  alert(textWeightArr[1]);
-		  //word_array_obj = {text: textWeightArr[0], weight: textWeightArr[1]};
 		  word_array.push({text: textWeightArr[0], weight: textWeightArr[1]});
 		}
-		
-		/*var word_array = [
-			{text: "Lorem", weight: 15},
-			{text: "Ipsum", weight: 9, link: "http://jquery.com/"},
-			{text: "Dolor", weight: 6, html: {title: "I can haz any html attribute"}},
-			{text: "Sit", weight: 7},
-			{text: "Amet", weight: 5},
-			{text: "MySites", weight: 6},
-			{text: "Hack Day", weight: 4},
-			{text: "Ovation", weight: 8},
-			{text: "IT Modernization", weight: 3},
-			{text: "AskOak", weight: 5}
-			// ...as many words as you want
-		];*/
 		
 		$(function() {
 		  // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
@@ -48,14 +30,18 @@
 		function goTo(){
 		    location.href = document.getElementById('link_id').value;
 		}
+		
+		function refreshPage(){
+		    window.location.reload();
+		} 
     </script>
   </head>
   <body>
   	<h1>State Farm Trends</h1>
-	<form>
-    	<input type="text" placeholder="Search..." required>
-    	<input type="button" value="Search">
-	</form>
+  	<p>
+		<input type="text" name="search" placeholder="Click here to search for State Farm Trends!">
+		<input type="submit" name="submit" onClick="refreshPage()" value="Submit">
+	</p>
     <!-- You should explicitly specify the dimensions of the container element -->
     <div id="example" style="width: 550px; height: 350px;"></div>
   </body>
