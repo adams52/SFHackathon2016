@@ -1,0 +1,19 @@
+
+body {
+	width: 95%;
+	font-family: Verdana, Geneva, sans-serif;
+	background-color: Darkred;
+	}
+
+h1 {
+	color: white;
+	}	
+	
+p {
+	font-family: "Times New Roman";
+	}
+	
+img {
+    max-width: 100%;
+    height: auto;
+}
