@@ -5,12 +5,13 @@ import org.aperture.data.WordBubbleDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloController {
 
     @RequestMapping("/words")
-    public String index(Model model) {
+    public String index(Model model, @RequestParam(value="searchCriteria", required=false) String searchCriteria) {
     	WordBubbleDAO dao = new WordBubbleDAO();
     	String value = "";
     	try {
@@ -20,13 +21,14 @@ public class HelloController {
 			e.printStackTrace();
 		}
     	
+    	model.addAttribute("searchCriteria", searchCriteria);
     	model.addAttribute("test",value);
     	
         return "forward:/index.jsp";
     }
 	
 	@RequestMapping("/wordsByPerson")
-	public String wordsByPerson(Model model, String name) {
+	public String wordsByPerson(Model model, String name, @RequestParam(value="searchCriteria", required=false) String searchCriteria) {
     	WordBubbleDAO dao = new WordBubbleDAO();
     	String value = "";
     	try {
@@ -36,6 +38,7 @@ public class HelloController {
 			e.printStackTrace();
 		}
     	
+    	model.addAttribute("searchCriteria", searchCriteria);
     	model.addAttribute("test",value);
     	
         return "forward:/index.jsp";
