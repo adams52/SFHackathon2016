@@ -78,12 +78,46 @@ public class WordBubbleDAO {
 
 	}
 	
+	public String selectWordCountByCommunity(String community) throws ClassNotFoundException {
+		Class.forName("org.sqlite.JDBC");
+
+		Connection connection = null;
+		String value = "";
+		try {
+			// create a database connection
+			connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
+			Statement statement = connection.createStatement();
+			statement.setQueryTimeout(30); // set timeout to 30 sec.
+
+			ResultSet rs2 = statement.executeQuery("SELECT Word, Sum(Count) AS Count FROM BusinessSocial WHERE Community = '" + community + "' GROUP BY Word ORDER BY Count DESC");
+			
+			while (rs2.next()) {
+				value += "" + rs2.getString("Word") + ":";
+				value += "" + rs2.getInt("Count") + ";";
+			}
+		} catch (SQLException e) {
+			// if the error message is "out of memory",
+			// it probably means no database file is found
+			System.err.println(e.getMessage());
+		} finally {
+			try {
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				// connection close failed.
+				System.err.println(e);
+			}
+		}
+		
+		return value;
+
+	}
+	
 	public ResultSet executeSelect(String sql) throws ClassNotFoundException {
 		Class.forName("org.sqlite.JDBC");
 
 		Connection connection = null;
 		ResultSet rs = null;
-		String value = "";
 		try {
 			// create a database connection
 			connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
@@ -114,7 +148,6 @@ public class WordBubbleDAO {
 		Class.forName("org.sqlite.JDBC");
 
 		Connection connection = null;
-		ResultSet rs = null;
 		String value = "";
 		try {
 			// create a database connection
