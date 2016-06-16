@@ -73,6 +73,12 @@
 				document.getElementById("submitAll").submit();
 			}
 		} 
+		
+		function keyPressOnInput() {
+			if (event.keyCode == 13) {
+				refreshPage();
+			}
+		}
     </script>
   </head>
   <body>
@@ -80,7 +86,7 @@
   	<div id="wordCloud" style="width:70%;float:left;">
 	  	<h1>State Farm Trends</h1>
 	  	<p>
-			<input type="text" id="search" name="search" value="${searchCriteria }" placeholder="Click here to search for State Farm Trends!">
+			<input type="text" id="search" name="search" onkeydown="keyPressOnInput();" value="${searchCriteria }" placeholder="Click here to search for State Farm Trends!">
 			<input type="submit" name="submit" onClick="refreshPage()" value="Submit">
 		</p>
 		<form id="submitAll" action="/words">
