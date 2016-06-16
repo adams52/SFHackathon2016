@@ -100,7 +100,17 @@
 	</div>
 	
 	<div id="right_fake" class="rightColumn" style="color:white;width:30%; float:right;display:block">
-		<p>Hey, these are the top trending words! Go us! </p>
+		<p>Ben Adams says: State Farm has released an excellent new tool called State Farm Trends that allows anyone to see what's most important
+		to State Farm employees. </p>
+		
+		<p>Hack Day says: It's so quiet at 2:00 AM</p>
+		
+		<p>Nick Nichols says: Studies have shown that people are most productive between the hours of 12:00 AM and 11:59 PM. What does this mean for our 
+		agents and customers?</p>
+		
+		<p>Nive Suresh says: A recent studied showed Hack Day has resulted in ideas worth $80 billion. </p>
+		
+		<p>Joanna Snipes says: Phoenix, we need your Red Mic submissions!</p>
 	</div>
     
     <div id="pop_up" class="rightColumn" style="color:white;width:30%; float:right;display:none">
