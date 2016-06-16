@@ -9,19 +9,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.boot.autoconfigure.*;
 
 @EnableAutoConfiguration
-@ComponentScan({"org.aperture.controller"})
+@ComponentScan({"org.aperture.controller", "org.aperture.data"})
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-    	WordBubbleDAO dao = new WordBubbleDAO();
-    	try {
-			dao.prepareDatabase();
-			System.out.println(dao.selectAllWordCount());
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         SpringApplication.run(Application.class);
     }
 

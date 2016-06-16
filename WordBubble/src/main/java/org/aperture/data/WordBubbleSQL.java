@@ -39,11 +39,17 @@ public class WordBubbleSQL {
 	
 	public static final String SELECT_ALL_DATA = "SELECT * FROM BusinessSocial";
 	
-	public static final String SELECT_ALL_WORD_COUNT = "SELECT Word, Sum(Count) AS Count FROM BusinessSocial GROUP BY Word";
+	public static final String SELECT_ALL_WORD_COUNT = "SELECT Word, Sum(Count) AS Count FROM BusinessSocial GROUP BY Word ORDER BY Count DESC";
 	
+	public static final String SELECT_WORD_COUNT_BY_NAME = "SELECT Word, Sum(Count) AS Count " +
+			"FROM BusinessSocial " +
+			"WHERE Name = ? " +
+			"GROUP BY Word " +
+			"ORDER BY Count DESC";
 	
-//	statement.executeUpdate("drop table if exists person");
-//    statement.executeUpdate("create table person (id integer, name string)");
-//    statement.executeUpdate("insert into person values(1, 'leo')");
-//    statement.executeUpdate("insert into person values(2, 'yui')");
+	public static final String SELECT_WORD_COUNT_BY_COMMUNITY = "SELECT Word, Sum(Count) AS Count " +
+			"FROM BusinessSocial " +
+			"WHERE Community = ? " +
+			"GROUP BY Word " +
+			"ORDER BY Count DESC";
 }
