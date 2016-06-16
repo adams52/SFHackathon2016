@@ -1,9 +1,7 @@
 package org.aperture.controller;
 
-import org.aperture.data.TestDAO;
 import org.aperture.data.WordBubbleDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,15 +16,8 @@ public class HelloController {
 
     @RequestMapping("/words")
     public String index(Model model, @RequestParam(value="searchCriteria", required=false) String searchCriteria) {
-//    	WordBubbleDAO dao = new WordBubbleDAO();
     	String value = "";
     	value = getDao().selectAllWordCount();
-//    	try {
-//			value = dao.selectAllWordCount();
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
     	
     	model.addAttribute("searchCriteria", searchCriteria);
     	model.addAttribute("test",value);
@@ -36,7 +27,6 @@ public class HelloController {
 	
 	@RequestMapping("/wordsByPerson")
 	public String wordsByPerson(Model model, String name, @RequestParam(value="searchCriteria", required=false) String searchCriteria) {
-//    	WordBubbleDAO dao = new WordBubbleDAO();
     	String value = "";
     	value = getDao().selectWordCountByName(name);
     	
@@ -48,7 +38,6 @@ public class HelloController {
 	
 	@RequestMapping("/wordsByCommunity")
 	public String wordsByCommunity(Model model, String community, @RequestParam(value="searchCriteria", required=false) String searchCriteria) {
-//    	WordBubbleDAO dao = new WordBubbleDAO();
     	String value = "";
     	value = getDao().selectWordCountByCommunity(community);
     	

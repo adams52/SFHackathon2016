@@ -1,10 +1,5 @@
 package org.aperture.data;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +23,7 @@ public class WordBubbleDAO {
 	@Transactional(readOnly=true)
 	public String selectWordCountByName(String name) {
 		List<String> wordCount = jdbcTemplate.query(WordBubbleSQL.SELECT_WORD_COUNT_BY_NAME, new Object[] { name },
-				new ListMapper()); // .query("select * from users", new
-									// UserRowMapper());
+				new ListMapper()); 
 		String value = concatWordCounts(wordCount);
 		return value;
 	}

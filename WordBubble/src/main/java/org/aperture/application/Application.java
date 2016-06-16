@@ -1,7 +1,5 @@
 package org.aperture.application;
 
-import org.aperture.data.DataConnection;
-import org.aperture.data.WordBubbleDAO;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
