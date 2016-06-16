@@ -24,11 +24,17 @@
 			    click: function() {
 			    	if(this.innerHTML == "Android") {
 			    		document.getElementById('pop_up').style.display = 'block';
-			    	} else document.getElementById('pop_up').style.display = 'none';
-			    	
-			    	if(this.innerHTML == "Hacking") {
+			    		document.getElementById('pop_up_hacking').style.display = 'none';
+			    		document.getElementById('right_fake').style.display = 'none';
+			    	} else  if(this.innerHTML == "Hacking") {
 			    		document.getElementById('pop_up_hacking').style.display = 'block';
-			    	} else document.getElementById('pop_up_hacking').style.display = 'none';
+			    		document.getElementById('right_fake').style.display = 'none';
+			    		document.getElementById('pop_up').style.display = 'none';
+			    	} else {
+			    		document.getElementById('pop_up_hacking').style.display = 'none';
+			    		document.getElementById('pop_up').style.display = 'none';
+			    		document.getElementById('right_fake').style.display = 'block';
+			    	}
 			      }
 			    }});
 		  
@@ -71,48 +77,64 @@
   </head>
   <body>
   <div id="main_body">
-  	<h1>State Farm Trends</h1>
-  	<p>
-		<input type="text" id="search" name="search" value="${searchCriteria }" placeholder="Click here to search for State Farm Trends!">
-		<input type="submit" name="submit" onClick="refreshPage()" value="Submit">
-	</p>
-	<form id="submitAll" action="/words">
-		<input type="hidden" id="searchCriteriaAll" name="searchCriteria" />
-	</form>
-	<form id="submitByName" action="/wordsByPerson">
-		<input type="hidden" id="name" name="name" />
-		<input type="hidden" id="searchCriteriaPerson" name="searchCriteria" />
-	</form>
-	<form id="submitByCommunity" action="/wordsByCommunity">
-		<input type="hidden" id="community" name="community" />
-		<input type="hidden" id="searchCriteriaCommunity" name="searchCriteria" />
-	</form>
-    <!-- You should explicitly specify the dimensions of the container element -->
-    <div id="example" style="width: 550px; height: 350px;"></div>
-    </div>
+  	<div id="wordCloud" style="width:70%;float:left;">
+	  	<h1>State Farm Trends</h1>
+	  	<p>
+			<input type="text" id="search" name="search" value="${searchCriteria }" placeholder="Click here to search for State Farm Trends!">
+			<input type="submit" name="submit" onClick="refreshPage()" value="Submit">
+		</p>
+		<form id="submitAll" action="/words">
+			<input type="hidden" id="searchCriteriaAll" name="searchCriteria" />
+		</form>
+		<form id="submitByName" action="/wordsByPerson">
+			<input type="hidden" id="name" name="name" />
+			<input type="hidden" id="searchCriteriaPerson" name="searchCriteria" />
+		</form>
+		<form id="submitByCommunity" action="/wordsByCommunity">
+			<input type="hidden" id="community" name="community" />
+			<input type="hidden" id="searchCriteriaCommunity" name="searchCriteria" />
+		</form>
+	    <!-- You should explicitly specify the dimensions of the container element -->
+	    <div id="example" style="width: 550px; height: 350px;"></div>
+	    </div>
+	</div>
+	
+	<div id="right_fake" class="rightColumn" style="color:white;width:30%; float:right;display:block">
+		<p>Hey, these are the top trending words! Go us! </p>
+	</div>
     
-    <div id="pop_up" style="width:30%; float:right; display:none">
-    Joanna Snipes asked a question: For <b>Android</b> development, would it be possible to use a git server to develop an app?<br>
+    <div id="pop_up" class="rightColumn" style="color:white;width:30%; float:right;display:none">
+    	<p>
+    		Joanna Snipes asked a question: For <b>Android</b> development, would it be possible to use a git server to develop an app?
+    	</p>
 		
-		Dallas Hub posted a shout out to <b>Android</b> developers in Bloomington, Illinois.<br>
+		<p>
+			Dallas Hub posted a shout out to <b>Android</b> developers in Bloomington, Illinois.
+		</p>
 		
-		Ben Adams posted a link for downloading <b>Android</b> Studio.<br>
+		<p>
+			Ben Adams posted a link for downloading <b>Android</b> Studio.
+		</p>
 		
-		Atlanta hub asked a question: What is trending with new <b>Android</b> wearables?<br>
+		<p>
+			Atlanta hub asked a question: What is trending with new <b>Android</b> wearables?
+		</p>
 		
-		Joanna Snipes replied to a post - A new version of <b>Android</b> Studio is now available!
+		<p>
+			Joanna Snipes replied to a post - A new version of <b>Android</b> Studio is now available!
+		</p>
 		</div>
 		
-		<div id="pop_up_hacking" style="width:30%; float:right; display:none">
-		Nive Suresh posted about <b>hacking</b> - what will this mean for State Farm's future?<br>
+		<div id="pop_up_hacking" class="rightColumn" style="color:white;width:30%; float:right;display:none">
+		<p>Nive Suresh posted about <b>hacking</b> - what will this mean for State Farm's future?</p>
 		
-		Joanna Snipes was mentioned in a post - Interested in <b>hacking</b>? Come join us for Hack Day 2016!<br>
+		<p>Joanna Snipes was mentioned in a post - Interested in <b>hacking</b>? Come join us for Hack Day 2016!</p>
 		
-		Ben Adams shared a link about <b>hacking</b> into vehicles and how that could affect State Farm.<br>
+		<p>Ben Adams shared a link about <b>hacking</b> into vehicles and how that could affect State Farm.</p>
 		
-		Dallas hub replied to a post about <b>hacking</b> - We have some ideas on how to make cars safer for State Farm customers!<br>
+		<p>Dallas hub replied to a post about <b>hacking</b> - We have some ideas on how to make cars safer for State Farm customers!</p>
 		
-		Atlanta hub shared a link about The National Day of <b>Hacking</b>. 
+		<p>Atlanta hub shared a link about The National Day of <b>Hacking</b>. </p>
 		</div>
     
   </body>
